@@ -12,7 +12,7 @@ const CommentCon = props => {
             </div>
 
             {props.comments.map(comment =>
-                <Comment comment = {comment} key = {shortid.generate()} /> )}
+                <Comment comment = {comment} key = {Date.now()} /> )} />
 
         </div>
     );

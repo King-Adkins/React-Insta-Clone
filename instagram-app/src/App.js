@@ -6,7 +6,7 @@ import SearchBar from './Components/SearchBar/SearchBar';
 import PostList from './Components/PostContainer/PostList';
 
 
-class App extends component {
+class App extends React.Component {
   
   constructor() {
     super();
@@ -18,7 +18,7 @@ class App extends component {
     return (
       <div className = "App">
       <SearchBar />
-      <PostList posts = {text} />
+      <PostList posts = {this.state.posts} />
       </div>
     );
   }
