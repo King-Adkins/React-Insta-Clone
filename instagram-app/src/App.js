@@ -3,8 +3,8 @@ import './util/reset.sass';
 import './App.css';
 import dummyData from './dummy-data';
 import SearchBar from './Components/SearchBar/SearchBar';
-import PostContainer from './Components/PostContainer/PostContainer';
-import shortid from 'shortid';
+import PostList from './Components/PostContainer/PostList';
+
 
 class App extends component {
   
@@ -18,9 +18,7 @@ class App extends component {
     return (
       <div className = "App">
       <SearchBar />
-      {this.state.posts.map(post => (
-        <PostContainer post = {post} key = {shortid.generate()} />
-      ))}
+      <PostList posts = {text} />
       </div>
     );
   }
