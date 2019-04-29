@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import CommentCon from './../CommentSec/CommentCon';
 
 const Post = ({ post }) => {
@@ -8,6 +9,13 @@ const Post = ({ post }) => {
             <CommentCon likes = {post.likes} comments = {post.comments} />
         </div>
     );
+};
+
+CommentCon.propTypes = {
+    post: PropTypes.shape({
+        imageUrl: PropTypes.string,
+        likes: PropTypes.string
+    })
 };
 
 export default Post;

@@ -3,9 +3,9 @@ import Comment from './Comment';
 
 const CommentCon = props => {
     return (
-        <div>
+        <div className = 'comment-container'>
             {props.comments.map(comment =>
-                <Comment comment = {comment} /> )}
+                <Comment comment = {comment} key = {shortid.generate()} /> )}
 
         </div>
     );

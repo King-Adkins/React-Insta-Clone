@@ -1,23 +1,21 @@
 import React from 'react';
-import { Container, Row, Col, Input } from 'reactstrap';
+import { Input } from 'reactstrap';
+import './SearchBar.sass';
+import Logo from './Logo';
+import SearchInput from './SearchInput';
+import SearchIcons from './SearchIcons';
 
 const SearchBar = props => {
     return (
-        <div className = 'searchBar'>
-            <Container>
-                <Row>
-                    <Col xs = '4'>
-                        <h1>Placeholder</h1>
-                    </Col>
-                    <Col xs = '4'>
-                        <Input type = 'text' name = 'search' id = 'search' placeholder = 'Search' />
-                    </Col>
-                    <Col xs = '4'>
-                        <h1>Profile Pic</h1>
-                    </Col>
-                </Row>
-            </Container>
+      <nav className = 'search'>
+        <div className = 'search-content'>
+            <Logo />
+            <SearchInput />
+            <SearchIcons />
+        <div className = 'search-social_icons' />
         </div>
+      </nav>
+       
     );
 };
 
