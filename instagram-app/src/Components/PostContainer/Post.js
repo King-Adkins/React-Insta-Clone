@@ -1,21 +1,22 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
-import CommentCon from './../CommentSec/CommentCon';
+import CommentSection from '../CommentSection/CommentSectionContainer';
+import PostHeader from './PostHeader';
+import './Post.js';
 
-const Post = ({ post }) => {
+const Post = props => {
     return (
-        <div className = 'post-body'>
-            <img src = {post.imageUrl} alt = '' />
-            <CommentCon likes = {post.likes} comments = {post.comments} />
+        <div className = 'post-border'>
+            <PostHeader username = {props.post.username} thumbnailUrl = {props.post.thumbnailUrl} />
+
+            <div className = 'post-image-wrapper'>
+                <img className = 'post-image' src = {props.post.imageUrl} alt = "thumbnail for post" />
+            </div>
+            <CommentSection comments = {props.post.comments} />
         </div>
+
     );
 };
 
-CommentCon.propTypes = {
-    post: PropTypes.shape({
-        imageUrl: PropTypes.string,
-        likes: PropTypes.string
-    })
-};
+
 
 export default Post;

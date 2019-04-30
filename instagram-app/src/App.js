@@ -1,13 +1,12 @@
-import React from 'react';
-import './util/reset.sass';
+import React, { Component } from 'react';
 import './App.css';
 import dummyData from './dummy-data';
+import PostContainer from './Components/PostContainer/PostContainer';
 import SearchBar from './Components/SearchBar/SearchBar';
-import PostList from './Components/PostContainer/PostList';
 
 
-class App extends React.Component {
-  
+
+class App extends Component {
   constructor() {
     super();
     this.state = {
@@ -18,7 +17,7 @@ class App extends React.Component {
     return (
       <div className = "App">
       <SearchBar />
-      <PostList posts = {this.state.posts} />
+      <PostContainer posts = {this.state.posts} />
       </div>
     );
   }
