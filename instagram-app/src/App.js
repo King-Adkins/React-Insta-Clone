@@ -22,16 +22,25 @@ searchPostHandler = e => {
     if (p.username.includes(e.target.value)) {
       return p;
     }
-  })
-}
+  });
+  this.setState({ filterPosts: posts });
+};
   render() {
     return (
       <div className = "App">
-      <SearchBar />
-      <PostContainer posts = {this.state.posts} />
-      </div>
-    );
-  }
-}
+      <SearchBar
+        searchTerm = {this.state.searchTerm}
+        searchPosts = {this.searchPostsHandler}
+      />
+      <PostContainer
+        posts = {
+          this.state.filterPosts.length > 0
+          ? this.state.filterPosts
+          : this.state.posts
+        }
+        />
+        </div>
+    )};
+};
 
 export default App;
