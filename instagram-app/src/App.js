@@ -10,9 +10,20 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      posts: dummyData
+      posts: [],
+      filterPosts: []
     };
   }
+  componentDidMount () {
+    this.setState({posts: dummyData});
+}
+searchPostHandler = e => {
+  const posts = this.state.posts.filter(p => {
+    if (p.username.includes(e.target.value)) {
+      return p;
+    }
+  })
+}
   render() {
     return (
       <div className = "App">
