@@ -8,7 +8,7 @@ const SearchBar = props => {
           <i className = 'icon-instagram' />
         </div>
         <div>
-          <input type = 'text' placeholder = 'Search' />
+          <input type = 'text' placeholder = 'Search' onKeyDown = {props.searchPosts} />
         </div>
         <div className = "social-wrapper">
           <div className = 'social'>

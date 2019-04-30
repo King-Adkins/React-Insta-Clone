@@ -6,6 +6,7 @@ import SearchBar from './Components/SearchBar/SearchBar';
 
 
 
+
 class App extends Component {
   constructor() {
     super();
@@ -21,6 +22,8 @@ searchPostHandler = e => {
   const posts = this.state.posts.filter(p => {
     if (p.username.includes(e.target.value)) {
       return p;
+    } else {
+      return null;
     }
   });
   this.setState({ filterPosts: posts });
@@ -31,15 +34,15 @@ searchPostHandler = e => {
       <SearchBar
         searchTerm = {this.state.searchTerm}
         searchPosts = {this.searchPostsHandler}
-      />
-      <PostContainer
+      /> 
+       <PostContainer
         posts = {
           this.state.filterPosts.length > 0
           ? this.state.filterPosts
           : this.state.posts
         }
         />
-        </div>
+       </div>
     )};
 };
 
